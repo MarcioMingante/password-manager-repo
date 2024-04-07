@@ -19,8 +19,8 @@ function Form() {
       <label htmlFor="url">URL</label>
       <input type="text" id="url" />
 
-      <button>Cadastrar</button>
       <button>Cancelar</button>
+      <button>Cadastrar</button>
     </form>
   );
 }
