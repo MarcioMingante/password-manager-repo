@@ -1,3 +1,7 @@
+body {
+  text-align: center;
+}
+
 .valid-password-check {
   color: #aeffb6;
 }
