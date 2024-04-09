@@ -72,6 +72,7 @@ function Form() {
             <button onClick={ handleShowForm }>Cancelar</button>
             <button disabled={ enableRegister }>Cadastrar</button>
           </form>
+
           <PasswordValidator password={ password } />
         </>
       )}
