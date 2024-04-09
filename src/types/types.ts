@@ -5,12 +5,15 @@ export type InfoType = {
   url: string
 };
 
-// type DeleteBtn = {
-//   removeElement: (password: string) => void;
-// };
-
 export type InfoDataType = {
   key: string
   infoData: InfoType
-  trashBtn: () => void;
+  trashBtn: () => void
+  isChecked: boolean
+  handleCheck: () => void
+};
+
+export type HidePasswordType = {
+  isChecked: boolean
+  handleCheck: () => void
 };

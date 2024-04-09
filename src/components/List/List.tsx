@@ -1,14 +1,10 @@
 import './List.css';
-import { useState } from 'react';
 import trash from '../../images/trash-img.svg';
-import { InfoDataType, InfoType } from '../../types/types';
-import { data } from '../../services/data';
+import { InfoDataType } from '../../types/types';
 
 function List(parameters: InfoDataType) {
-  const { infoData, trashBtn } = parameters;
+  const { infoData, trashBtn, isChecked } = parameters;
   const { url, serviceName, login, password } = infoData;
-
-  // const [listData, setListData] = useState(data);
 
   return (
     <div className="list-container">
@@ -23,7 +19,7 @@ function List(parameters: InfoDataType) {
 
       <div>
         <p>Senha</p>
-        <p>{password}</p>
+        <p>{isChecked ? '******' : password}</p>
       </div>
 
       <button onClick={ trashBtn } id={ password } data-testid="remove-btn">
