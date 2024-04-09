@@ -1,12 +1,35 @@
+import { useState } from 'react';
 import './App.css';
 import Form from './components/Form/Form';
-import Title from './components/Title';
+import Title from './components/Title/Title';
+import { data } from './services/data';
+// import { InfoType } from './types/types';
+import List from './components/List/List';
+import { InfoType } from './types/types';
 
 function App() {
+  const [listData, setListData] = useState(data);
+
+  const addNewPassword = (info: InfoType) => {
+    const newAccountInfo = { ...info };
+
+    setListData([...listData, newAccountInfo]);
+  };
+
   return (
     <>
       <Title />
-      <Form />
+      <Form onAddNewPassword={ addNewPassword } />
+      {listData.length === 0 && (
+        <h2>Nenhuma senha cadastrada</h2>
+      )}
+
+      {listData.length >= 1 && (
+        listData.map((element) => (<List
+          key={ element.password }
+          infoData={ element }
+        />))
+      )}
     </>
 
   );
